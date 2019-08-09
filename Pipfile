@@ -7,7 +7,6 @@ verify_ssl = true
 
 [packages]
 pyyaml = "*"
-ksd = {editable = true,path = "."}
 
 [requires]
 python_version = "3.7"

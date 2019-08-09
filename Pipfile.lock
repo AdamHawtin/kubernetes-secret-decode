@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bc0eb9ac204c33a46a9e4629a0b5186909af2d6eb9509e214e6a678e23613499"
+            "sha256": "a4275436809a7e2913b360dd75064953a79bf13d255d76de359692e861a213ef"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,10 +16,6 @@
         ]
     },
     "default": {
-        "ksd": {
-            "editable": true,
-            "path": "."
-        },
         "pyyaml": {
             "hashes": [
                 "sha256:0113bc0ec2ad727182326b61326afa3d1d8280ae1122493553fd6f4397f33df9",
