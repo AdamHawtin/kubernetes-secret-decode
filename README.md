@@ -9,6 +9,11 @@ Requires python >= 3.6 to run
 For development requires [pipenv](https://github.com/pypa/pipenv).
 
 ## Installation
+Clone the repo
+```shell script
+git clone git@github.com:AdamHawtin/kubernetes-secret-decode.git && cd kubernetes-secret-decode
+```
+
 Run 
 ```shell script
 make install
