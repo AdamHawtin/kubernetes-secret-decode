@@ -5,24 +5,24 @@ import yaml
 
 
 def decode_secret(secret, secret_format='yaml'):
-    secret_decoders = {'json': decode_secret_json,
-                       'yaml': decode_secret_yaml,
-                       'yml': decode_secret_yaml}
-    return secret_decoders[secret_format](secret)
+    secret_decoders = {'json': json_decode_data_fields,
+                       'yaml': yaml_decode_data_fields,
+                       'yml': yaml_decode_data_fields}
+    return secret_decoders[secret_format.lower()](secret)
 
 
 def guess_secret_format(secret):
-    if secret[0] == '{':
+    if secret.startswith('{'):
         return 'json'
     elif secret.startswith('apiVersion: '):
         return 'yaml'
 
 
-def decode_secret_json(secret_json):
+def json_decode_data_fields(secret_json):
     return json.dumps(decode_data_fields(json.loads(secret_json)), indent=2)
 
 
-def decode_secret_yaml(secret_yaml):
+def yaml_decode_data_fields(secret_yaml):
     return yaml.safe_dump(decode_data_fields(yaml.safe_load(secret_yaml)), indent=2)
 
 
