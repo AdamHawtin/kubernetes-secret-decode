@@ -1,6 +1,6 @@
+import base64
 import json
 
-import base64
 import yaml
 
 
@@ -28,7 +28,15 @@ def yaml_decode_data_fields(secret_yaml):
 
 def decode_data_fields(secret):
     decoded_data = {}
-    for k, v in secret['data'].items():
-        decoded_data[k] = base64.b64decode(v).decode()
+    for key, value in secret['data'].items():
+        decoded_data[key] = decode_data_value(value)
     secret['data'] = decoded_data
     return secret
+
+
+def decode_data_value(encoded_value):
+    decoded_value = base64.b64decode(encoded_value).decode()
+    try:
+        return json.loads(decoded_value)
+    except ValueError:
+        return decoded_value
