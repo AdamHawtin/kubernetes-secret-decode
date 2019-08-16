@@ -1,4 +1,4 @@
-# Kubernetes secret decoder
+# Kubernetes secret decoder [![Build Status](https://travis-ci.org/AdamHawtin/kubernetes-secret-decode.svg?branch=master)](https://travis-ci.org/AdamHawtin/kubernetes-secret-decode)
 Inspired by https://github.com/ashleyschuett/kubernetes-secret-decode
 
 A python script to decode the data fields of the output of `kubectl get secret <secret> -o yaml` (or `-o json`) so they are human readable (and copy-paste-able).
