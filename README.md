@@ -6,19 +6,21 @@ A python script to decode the data fields of the output of `kubectl get secret <
 ## Dependencies
 Requires python >= 3.6 to run 
 
-For development requires [pipenv](https://github.com/pypa/pipenv).
+For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation.
 
 ## Installation
-Clone the repo
+To download the latest release and install through your current Pip run:
 ```shell script
-git clone git@github.com:AdamHawtin/kubernetes-secret-decode.git && cd kubernetes-secret-decode
+curl -L https://github.com/AdamHawtin/kubernetes-secret-decode/archive/v0.0.1.tar.gz --output ./kubernetes-secret-decode-0.0.1.tar.gz
+tar xzf kubernetes-secret-decode-0.0.1.tar.gz -C . && pushd kubernetes-secret-decode-0.0.1
+make install
+popd
 ```
 
-Run 
+Or you can clone the repo then run:
 ```shell script
 make install
 ```
-This will install the package to your current pip.
 
 ## Usage
 Pipe the output of the kubectl get secret command to `ksd` like so
