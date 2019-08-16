@@ -1,0 +1,30 @@
+dist: xenial
+
+sudo: required
+
+services:
+  - docker
+
+language: python
+
+python:
+  - "3.7"
+  - "3.6"
+
+install:
+  - pip install pipenv
+  - pipenv install --dev --deploy
+
+script:
+  - make test
+
+after_success:
+  - pipenv run codecov
+
+env:
+  global:
+    - PIPENV_IGNORE_VIRTUALENVS=1
+
+branches:
+  only:
+    - master
