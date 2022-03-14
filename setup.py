@@ -7,5 +7,6 @@ setup(
         'console_scripts': [
             'ksd=main:main'
         ]
-    }
+    },
+    python_requires=">=3.10",
 )
