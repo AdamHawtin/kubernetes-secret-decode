@@ -6,7 +6,7 @@ A python script to decode the data fields of the output of `kubectl get secret <
 ## Dependencies
 Requires python >= 3.10 to run 
 
-For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation using ` pipenv lock --requirements > requirements.txt`.
+For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation using `make freeze-requirements`.
 
 ## Installation
 To download the latest release and install through your current Pip run:
