@@ -11,8 +11,8 @@ For development dependencies are managed with [pipenv](https://github.com/pypa/p
 ## Installation
 To download the latest release and install through your current Pip run:
 ```shell script
-curl -L https://github.com/AdamHawtin/kubernetes-secret-decode/archive/v0.1.0.tar.gz --output ./kubernetes-secret-decode-0.1.0.tar.gz
-tar xzf kubernetes-secret-decode-0.1.0.tar.gz -C . && pushd kubernetes-secret-decode-0.1.0
+curl -L https://github.com/AdamHawtin/kubernetes-secret-decode/archive/v1.0.0.tar.gz --output ./kubernetes-secret-decode-1.0.0.tar.gz
+tar xzf kubernetes-secret-decode-1.0.0.tar.gz -C . && pushd kubernetes-secret-decode-1.0.0
 make install
 popd
 ```

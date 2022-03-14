@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from decode_kubernetes_secret import decode_secret, guess_secret_format
+from decode_kubernetes_secret import decode_secret, deduce_secret_format
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     else:
         parser.print_help()
         return 1
-    secret_format = args.format or guess_secret_format(secret_string)
+    secret_format = args.format or deduce_secret_format(secret_string)
     print(decode_secret(secret_string, secret_format=secret_format))
 
 

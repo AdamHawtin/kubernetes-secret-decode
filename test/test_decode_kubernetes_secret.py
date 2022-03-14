@@ -18,24 +18,24 @@ def test_decode_data_fields():
     assert actual_decoded_secret == expected_decoded_secret
 
 
-def test_guess_secret_format_json():
+def test_deduce_secret_format_json():
     # Given
     secret = '{"thisLooksLike": "JSON"}'
 
     # When
-    secret_format = decode_kubernetes_secret.guess_secret_format(secret)
+    secret_format = decode_kubernetes_secret.deduce_secret_format(secret)
 
     # Then
     assert secret_format == 'json'
 
 
-def test_guess_secret_format_yaml():
+def test_deduce_secret_format_yaml():
     # Given
     secret = ('apiVersion: v1 \n'
               'thisLooksLike: YAML')
 
     # When
-    secret_format = decode_kubernetes_secret.guess_secret_format(secret)
+    secret_format = decode_kubernetes_secret.deduce_secret_format(secret)
 
     # Then
     assert secret_format == 'yaml'
@@ -51,6 +51,17 @@ def test_json_decode_data_fields():
 
     # Then
     assert actual_decoded_secret == expected_decoded_secret
+
+
+def test_decode_data_fields_handles_no_data_gracefully():
+    # Given
+    secret_with_no_data = {'foo': 'bar'}
+
+    # When
+    actual_decoded_secret = decode_kubernetes_secret.decode_data_fields(secret_with_no_data)
+
+    # Then
+    assert actual_decoded_secret == secret_with_no_data
 
 
 def test_yaml_decode_data_fields():
