@@ -11,7 +11,7 @@ def decode_secret(secret, secret_format='yaml'):
     return secret_decoders[secret_format.lower()](secret)
 
 
-def guess_secret_format(secret):
+def deduce_secret_format(secret):
     if secret.startswith('{'):
         return 'json'
     elif secret.startswith('apiVersion: '):
@@ -27,11 +27,13 @@ def yaml_decode_data_fields(secret_yaml):
 
 
 def decode_data_fields(secret):
-    decoded_data = {}
-    for key, value in secret['data'].items():
-        decoded_data[key] = decode_data_value(value)
-    secret['data'] = decoded_data
-    return secret
+    decoded_secret = secret.copy()
+    if secret.get('data'):
+        decoded_data = {}
+        for key, value in secret['data'].items():
+            decoded_data[key] = decode_data_value(value)
+        decoded_secret['data'] = decoded_data
+    return decoded_secret
 
 
 def decode_data_value(encoded_value):

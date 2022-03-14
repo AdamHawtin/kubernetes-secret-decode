@@ -1,18 +1,18 @@
-# Kubernetes secret decoder [![Build Status](https://travis-ci.org/AdamHawtin/kubernetes-secret-decode.svg?branch=master)](https://travis-ci.org/AdamHawtin/kubernetes-secret-decode)
+# Kubernetes secret decoder [![Python Test](https://github.com/AdamHawtin/kubernetes-secret-decode/actions/workflows/python_test.yml/badge.svg)](https://github.com/AdamHawtin/kubernetes-secret-decode/actions/workflows/python_test.yml)
 Inspired by https://github.com/ashleyschuett/kubernetes-secret-decode
 
 A python script to decode the data fields of the output of `kubectl get secret <secret> -o yaml` (or `-o json`) so they are human readable (and copy-paste-able).
 
 ## Dependencies
-Requires python >= 3.6 to run 
+Requires python >= 3.10 to run 
 
-For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation.
+For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation using `make freeze-requirements`.
 
 ## Installation
 To download the latest release and install through your current Pip run:
 ```shell script
-curl -L https://github.com/AdamHawtin/kubernetes-secret-decode/archive/v0.1.0.tar.gz --output ./kubernetes-secret-decode-0.1.0.tar.gz
-tar xzf kubernetes-secret-decode-0.1.0.tar.gz -C . && pushd kubernetes-secret-decode-0.1.0
+curl -L https://github.com/AdamHawtin/kubernetes-secret-decode/archive/v0.2.0.tar.gz --output ./kubernetes-secret-decode-0.2.0.tar.gz
+tar xzf kubernetes-secret-decode-0.2.0.tar.gz -C . && pushd kubernetes-secret-decode-0.2.0
 make install
 popd
 ```
