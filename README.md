@@ -4,7 +4,7 @@ Inspired by https://github.com/ashleyschuett/kubernetes-secret-decode
 A python script to decode the data fields of the output of `kubectl get secret <secret> -o yaml` (or `-o json`) so they are human readable (and copy-paste-able).
 
 ## Dependencies
-Requires python >= 3.6 to run 
+Requires python >= 3.10 to run 
 
 For development dependencies are managed with [pipenv](https://github.com/pypa/pipenv). The dependencies are then frozen in [requirements.txt](requirements.txt) for installation.
 
