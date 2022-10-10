@@ -21,8 +21,8 @@ def main():
 
 def parse_arguments(parser: argparse.ArgumentParser):
     parser.add_argument('secret', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
-    parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
-    parser.add_argument('--format', type=str, help='Format of the secret', required=False)
+    parser.add_argument('--outfile', '-o', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
+    parser.add_argument('--format', '-f', type=str, help='Format of the secret', required=False)
     return parser.parse_args()
 
 
